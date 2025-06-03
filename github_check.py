@@ -13,7 +13,7 @@ url = f'https://api.github.com/repos/{GITHUB_USER}/{REPO_NAME}/contents/{FOLDER_
 response = requests.get(url)
 
 # Streamlit 앱
-st.title(f"수행평가 제출 확인")
+st.title(f"과제 제출 확인")
 
 if response.status_code == 200:
     files = response.json()
