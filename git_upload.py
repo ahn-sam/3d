@@ -7,7 +7,7 @@ GITHUB_REPO = st.secrets["repo"]
 GITHUB_TOKEN =  st.secrets["git_token"]   # 개인 액세스 토큰 입력
 BRANCH = "main"  # 사용할 브랜치
 
-st.title("수행평가 제출")
+st.title("과제 제출")
 # 파일 업로드
 uploaded_file = st.file_uploader("파일을 업로드하세요")
 
