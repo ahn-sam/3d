@@ -34,9 +34,6 @@ if uploaded_file is not None:
 
     response = requests.put(url, json=data, headers={"Authorization": f"token {GITHUB_TOKEN}"})
 
-    st.write("Status Code:", response.status_code)
-    st.write("Response Text:", response.text)
-
     if response.status_code in [200, 201]:
         st.success(f"✅ 파일이 정상적으로 업로드되었습니다.\n\n {uploaded_file.name}")
     else:
