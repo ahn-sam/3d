@@ -10,8 +10,13 @@ GITHUB_TOKEN = st.secrets['git_token']
 # GitHub API URL
 url = f'https://api.github.com/repos/{GITHUB_USER}/{REPO_NAME}/contents/{FOLDER_PATH}'
 
+# 인증 헤더
+headers = {
+    'Authorization': f'token {GITHUB_TOKEN}'
+}
+
 # API 요청
-response = requests.get(url)
+response = requests.get(url, headers=headers)
 
 # Streamlit 앱
 st.title("과제 제출 확인")
