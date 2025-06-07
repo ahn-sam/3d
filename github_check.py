@@ -13,14 +13,15 @@ url = f'https://api.github.com/repos/{GITHUB_USER}/{REPO_NAME}/contents/{FOLDER_
 response = requests.get(url)
 
 # Streamlit 앱
-st.title(f"과제 제출 확인")
+st.title("과제 제출 확인")
 
 if response.status_code == 200:
     files = response.json()
     if isinstance(files, list):
         for file in files:
-            st.write(file['name'], end = "   ")
+            st.write(file['name'])
     else:
         st.write("폴더가 비어 있습니다.")
 else:
-    st.write("폴더를 가져오는 데 실패했습니다.")
+    st.write(f"폴더를 가져오는 데 실패했습니다. 상태코드: {response.status_code}")
+    st.write(response.json())
