@@ -5,6 +5,7 @@ import requests
 GITHUB_USER = st.secrets['user']  # GitHub 사용자 이름
 REPO_NAME = st.secrets['name']      # 레포지토리 이름
 FOLDER_PATH = st.secrets['path']        # 폴더 경로 (예: 'src' 또는 'docs')
+GITHUB_TOKEN = st.secrets['git_token']
 
 # GitHub API URL
 url = f'https://api.github.com/repos/{GITHUB_USER}/{REPO_NAME}/contents/{FOLDER_PATH}'
